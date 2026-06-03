@@ -36,7 +36,7 @@
         "owner": "={{ $vars.owner }}",
         "repository": "={{ $vars.repository }}",
         "issueNumber": "={{ $json.pull_request.number }}",
-        "body": "Hi @{{ $json.pull_request.user.login }} 👋\n\nThanks for opening this PR. Please add:\n- a quick summary of what changed\n- test evidence (logs/screenshots)\n- linked issue number(s)\n\nThis comment was added automatically by n8n."
+        "body": "={{ [\n  `Hi @${$json.pull_request.user.login} 👋`,\n  '',\n  'Thanks for opening this PR. Please add:',\n  '- a quick summary of what changed',\n  '- test evidence (logs/screenshots)',\n  '- linked issue number(s)',\n  '',\n  'This comment was added automatically by n8n.'\n].join('\\n') }}"
       },
       "id": "github-comment",
       "name": "Post PR onboarding comment",
