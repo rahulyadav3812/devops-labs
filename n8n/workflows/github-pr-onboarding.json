@@ -35,8 +35,8 @@
         "operation": "create",
         "owner": "={{ $vars.owner }}",
         "repository": "={{ $vars.repository }}",
-        "issueNumber": "={{ $json.number }}",
-        "body": "Hi @{{ $json.pull_request.user.login }} 👋\\n\\nThanks for opening this PR. Please add:\\n- a quick summary of what changed\\n- test evidence (logs/screenshots)\\n- linked issue number(s)\\n\\nThis comment was added automatically by n8n."
+        "issueNumber": "={{ $json.pull_request.number }}",
+        "body": "Hi @{{ $json.pull_request.user.login }} 👋\n\nThanks for opening this PR. Please add:\n- a quick summary of what changed\n- test evidence (logs/screenshots)\n- linked issue number(s)\n\nThis comment was added automatically by n8n."
       },
       "id": "github-comment",
       "name": "Post PR onboarding comment",
